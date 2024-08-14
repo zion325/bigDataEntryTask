@@ -87,13 +87,13 @@ Last login: Thu Jul 18 11:32:23 2024
 
 # 3 实现过程
 
-![过程图](images/81721288186_.pic.jpg)
+![过程图](https://github.com/zion325/bigDataEntryTask/blob/main/images/81721288186_.pic.jpg)
 
 - **实时**：
 
 部署kafka、zookeeper、es、kibana(也可以用docker部署，后两个主要用来可视化，可根据需求部署)
 
-使用python生成模拟数据并将数据灌入kafka
+使用python生产模拟数据并将数据灌入kafka
 
 安装flink并连接kafka作为数据源、计算相关指标、连接mysql保存计算结果
 
@@ -231,13 +231,15 @@ while (True):
 
 进入终端，启动消费者，查看是否成功插入数据。
 
+![模拟数据](https://github.com/zion325/bigDataEntryTask/blob/main/images/1723621287153.jpg)
+
 ## 3.2 flink实时处理
 
 本文采用flink版本为1.13.6
 
 官网下载压缩包后，解压+配置环境变量
 
-由于要使用`sql-client`连接kafka和mysql, 因此要引入相应的依赖包(如下三个)，官网 或者 https://repo1.maven.org/maven2/org/apache/flink/ 下载对于版本依赖包，粘贴到flink安装目录的lib文件夹下
+由于要使用`sql-client`连接kafka和mysql, 因此要引入相应的依赖包(如下三个)，官网 或者 https://repo1.maven.org/maven2/org/apache/flink/ 下载对应的版本依赖包，粘贴到flink安装目录的lib文件夹下
 
 `flink-sql-connector-kafka_2.12-1.13.6.jar`
 
